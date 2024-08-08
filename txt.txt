@@ -1,0 +1,35 @@
+            @include responsive(sm) {
+                @include position(fixed, 0, 0, 0, 0);
+                width: 100%;
+                height: 100%;
+                background: $green-500;
+                flex-direction: column;
+                padding-top: 5rem;
+            }
+
+
+@mixin responsive($screen) {
+    @if $screen ==lg {
+        @media (max-width: map-get($breakPoints, "lg")) {
+            @content;
+        }
+    }
+
+    @else if $screen ==md {
+        @media (max-width: map-get($breakPoints, "md")) {
+            @content;
+        }
+    }
+
+    @else if $screen ==sm {
+        @media (max-width: map-get($breakPoints, "sm")) {
+            @content;
+        }
+    }
+
+    @else if $screen ==xsm {
+        @media (max-width: map-get($breakPoints, "xsm")) {
+            @content;
+        }
+    }
+}
